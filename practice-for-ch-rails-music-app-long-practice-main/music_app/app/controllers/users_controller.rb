@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
         if @user.save
             login!(@user)
-            redirect_to 
+            redirect_to session_url #----incomplete
         else
             flash.now[:errors] = @user.errors.full_messages
             render :new
